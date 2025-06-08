@@ -6,4 +6,5 @@ shap
 joblib
 matplotlib
 mysql-connector-python
+pyyaml
 
