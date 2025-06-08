@@ -1,87 +1,84 @@
-# 💸 Loan Default End-to-End Prediction System
+# 🏦 Loan Default Prediction System with SHAP Explainability
 
-An **end-to-end machine learning system** to predict the risk of **loan default** using structured banking data from the Czech Republic (Berka dataset). This project combines **model training**, **SHAP-based explainability**, and **interactive frontend deployment** using **Streamlit** and **Gradio**.
-
----
-
-## 🚀 Live Demo  
-🔗 [Streamlit App](https://loan-default-end-to-end-prediction-system-g6wlk74appi6gwvxjzee.streamlit.app/)
+This end-to-end machine learning project predicts whether a customer will default on a loan using the Czech financial dataset. It includes model training, explainability with SHAP, and a deployed UI on Streamlit.
 
 ---
 
-## 🧠 Problem Statement  
-Banks need to assess creditworthiness of applicants efficiently. This system predicts **whether a customer is likely to default on a loan** using features such as loan amount, district data, and criminal records.
+## 🚀 Live Demo
+Access the deployed app here:  
+👉 [Streamlit App](https://loan-default-end-to-end-prediction-system-g6wlk74appi6gwvxjzee.streamlit.app/)
 
 ---
 
-## 🛠️ Tech Stack
+## 📂 Project Structure
 
-| Layer | Tools Used |
-|-------|------------|
-| **Data Processing** | `pandas`, `numpy` |
-| **Modeling** | `scikit-learn` (SVC with `StandardScaler`) |
-| **Explainability** | `SHAP` (KernelExplainer + plots) |
-| **Frontend** |  `Streamlit` |
-| **Deployment** | `Streamlit Cloud` |
-| **Monitoring** | UptimeRobot / BetterStack |
-
----
-
-## 🔍 Features
-
-- ✅ Cleaned & engineered features from raw bank datasets  
-- ✅ Trained **SVC classifier** on scaled features  
-- ✅ SHAP explainability (Waterfall + Beeswarm plots)  
-- ✅ Public **interactive UI** to input customer details  
-- ✅ **Deployed and monitored** in production  
-
----
-
-## 📊 Key Input Features
-
-| Feature | Description |
-|---------|-------------|
-| `amount` | Total loan amount requested |
-| `payments` | Monthly installment amount |
-| `A4` | Total inhabitants in applicant's district |
-| `A15` | Number of crimes in district (1995) |
-| `A16` | Number of crimes in district (1996) |
-
----
-
-## 📈 Output
-
-- **Prediction**: `Default` or `No Default`  
-- **Probability of Default**: e.g., 27.4%  
-- **SHAP Explanations**: Visual insights into which features influenced the prediction
-
----
-
-## 🗂️ Project Structure
-.
-├── app.py # Streamlit frontend
+loan-default-end-to-end-prediction-system/
+├── app.py # Streamlit/Gradio frontend app
+├── Dockerfile # For deployment via Hugging Face
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
 ├── data/
-│ ├── 02_intermediate/ # Processed training data
-│ └── 03_models/ # Trained SVC model
+│ ├── 01_raw/ # Raw data files
+│ ├── 02_intermediate/ # Processed training/testing sets
+│ └── 03_models/ # Trained models (.pkl)
+├── notebooks/ # Jupyter notebooks for EDA & training
 ├── src/
-│ └── pipelines/utils/ # config_list.py and helpers
-├── requirements.txt
-└── README.md
+│ └── pipelines/
+│ ├── data_preprocessing.py # Data cleaning & transformation logic
+│ ├── modelling.py # Model training and SHAP logic
+│ └── utils/
+│ └── config_list.py # Centralized path and feature config
+
 
 
 ---
 
-## 📌 How to Run Locally
+## ⚙️ Features
+
+- 📊 **Data Cleaning** and feature engineering from relational financial tables
+- 🧠 **SVC Classifier** with scaling and class balancing
+- 📈 **SHAP Explainability** (KernelExplainer with Waterfall + Beeswarm plots)
+- 🧪 **Evaluation Reports** with precision/recall/F1-score
+- 🌐 **Streamlit-based UI** + SHAP visualization support
+- 🔁 **Fully modular pipeline** with reusability
+
+---
+
+## 📦 Technologies Used
+
+- Python (3.10)
+- scikit-learn
+- SHAP
+- Pandas, NumPy, Matplotlib
+- Streamlit / Gradio
+- Joblib
+
+---
+
+## 🛠 Setup
 
 ```bash
+# Clone and install
 git clone https://github.com/pruzide/loan-default-end-to-end-prediction-system.git
 cd loan-default-end-to-end-prediction-system
 pip install -r requirements.txt
+
+# Run app
 streamlit run app.py
 
-👨‍💻 Author
-Gourav Singh
-Github | LinkedIn
+
+🧠 SHAP Outputs
+📉 Waterfall plots for individual prediction
+
+🐝 Beeswarm plots for global feature impact
+
+Background dataset used from training set (scaled + unscaled input)
+
+
+📄 License
+This project is under the MIT License.
+
+
 
 
 
