@@ -2,6 +2,8 @@
 
 This end-to-end machine learning project predicts whether a customer will default on a loan using the Czech financial dataset. It includes model training, explainability with SHAP, and a deployed UI on Streamlit.
 
+I suggest you to go through the Jupyter Notebook to go through the detailed process of selection of model and experimenting with various features and finalizing SVC as the best model. The notebook also has detailed EDA to capture various potential trends which increase credit risk.
+
 ---
 
 ## 🚀 Live Demo
