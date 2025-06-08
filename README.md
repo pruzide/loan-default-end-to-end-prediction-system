@@ -10,30 +10,6 @@ Access the deployed app here:
 
 ---
 
-## 📂 Project Structure
-
-loan-default-end-to-end-prediction-system/
-├── app.py                      # Streamlit/Gradio frontend app
-├── Dockerfile                  # For deployment via Hugging Face
-├── requirements.txt            # Python dependencies
-├── README.md                   # Project documentation
-├── data/
-│   ├── 01_raw/                 # Raw data files
-│   ├── 02_intermediate/        # Processed training/testing sets
-│   └── 03_models/              # Trained models (.pkl)
-├── notebooks/                  # Jupyter notebooks for EDA & training
-├── src/
-│   └── pipelines/
-│       ├── data_preprocessing.py  # Data cleaning & transformation logic
-│       ├── modelling.py           # Model training and SHAP logic
-│       └── utils/
-│           └── config_list.py     # Centralized path and feature config
-
-
-
-
----
-
 ## ⚙️ Features
 
 - 📊 **Data Cleaning** and feature engineering from relational financial tables
@@ -51,15 +27,14 @@ loan-default-end-to-end-prediction-system/
 - scikit-learn
 - SHAP
 - Pandas, NumPy, Matplotlib
-- Streamlit / Gradio
+- Streamlit
 - Joblib
 
 ---
 
 ## 🛠 Setup
 
-```bash
-# Clone and install
+Clone and install
 git clone https://github.com/pruzide/loan-default-end-to-end-prediction-system.git
 cd loan-default-end-to-end-prediction-system
 pip install -r requirements.txt
@@ -70,15 +45,17 @@ pip install -r requirements.txt
 # Run app
 streamlit run app.py
 
+---
+
 
 ## 🧠 SHAP Outputs
+📄 Waterfall plots for individual prediction explanation
 
-- 🧾 **Waterfall plots for individual prediction**
-- 📊 **Beeswarm plots for global feature impact**
+📊 Beeswarm plots for global feature impact
 
-> Background dataset used from training set (**scaled + unscaled input**)
+ℹ️ Background dataset used from training set (**scaled + unscaled input**)
 
-
+---
 
 ## 📄 License
 This project is under the MIT License.
