@@ -13,21 +13,22 @@ Access the deployed app here:
 ## 📂 Project Structure
 
 loan-default-end-to-end-prediction-system/
-├── app.py # Streamlit/Gradio frontend app
-├── Dockerfile # For deployment via Hugging Face
-├── requirements.txt # Python dependencies
-├── README.md # Project documentation
+├── app.py                      # Streamlit/Gradio frontend app
+├── Dockerfile                  # For deployment via Hugging Face
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
 ├── data/
-│ ├── 01_raw/ # Raw data files
-│ ├── 02_intermediate/ # Processed training/testing sets
-│ └── 03_models/ # Trained models (.pkl)
-├── notebooks/ # Jupyter notebooks for EDA & training
+│   ├── 01_raw/                 # Raw data files
+│   ├── 02_intermediate/        # Processed training/testing sets
+│   └── 03_models/              # Trained models (.pkl)
+├── notebooks/                  # Jupyter notebooks for EDA & training
 ├── src/
-│ └── pipelines/
-│ ├── data_preprocessing.py # Data cleaning & transformation logic
-│ ├── modelling.py # Model training and SHAP logic
-│ └── utils/
-│ └── config_list.py # Centralized path and feature config
+│   └── pipelines/
+│       ├── data_preprocessing.py  # Data cleaning & transformation logic
+│       ├── modelling.py           # Model training and SHAP logic
+│       └── utils/
+│           └── config_list.py     # Centralized path and feature config
+
 
 
 
@@ -63,19 +64,23 @@ git clone https://github.com/pruzide/loan-default-end-to-end-prediction-system.g
 cd loan-default-end-to-end-prediction-system
 pip install -r requirements.txt
 
+---
+
+
 # Run app
 streamlit run app.py
 
 
-🧠 SHAP Outputs
-📉 Waterfall plots for individual prediction
+## 🧠 SHAP Outputs
 
-🐝 Beeswarm plots for global feature impact
+- 🧾 **Waterfall plots for individual prediction**
+- 📊 **Beeswarm plots for global feature impact**
 
-Background dataset used from training set (scaled + unscaled input)
+> Background dataset used from training set (**scaled + unscaled input**)
 
 
-📄 License
+
+## 📄 License
 This project is under the MIT License.
 
 
