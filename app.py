@@ -7,10 +7,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
-from src.pipelines.utils.config_list import configure
+# from src.pipelines.utils.config_list import configure
 
 # Load paths from config
-_, _, _, _, _, _, _, _, file_path_X_train, _, _, _, _, _, _, _, model_path,shap_plot_path = configure()
+# _, _, _, _, _, _, _, _, file_path_X_train, _, _, _, _, _, _, _, model_path,shap_plot_path = configure()
+
+model_path = "data/03_models/best_model.pkl"
+file_path_X_train = "data/02_intermediate/X_train.csv"
 
 # Load model and raw training data
 model: joblib = joblib.load(model_path)
