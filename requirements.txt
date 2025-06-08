@@ -1,0 +1,9 @@
+streamlit==1.35.0
+pandas
+numpy
+scikit-learn
+shap
+joblib
+matplotlib
+mysql-connector-python
+
