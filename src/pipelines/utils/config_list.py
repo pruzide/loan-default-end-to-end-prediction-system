@@ -26,6 +26,7 @@ def configure():
     eda_path_seaborn = None
     eda_path_sweetviz = None
     
+    shap_path = None
 
     model_path = None
 
@@ -100,4 +101,9 @@ def configure():
             model_path = source.get('path')
             break
 
-    return file_path_account,file_path_card,file_path_client,file_path_disp,file_path_district ,file_path_loan,file_path_order,file_path_trans,visual_columns,countplot_columns,eda_path_seaborn,eda_path_sweetviz,feature_columns,columns_to_be_dropped,model_path
+    for source in eda_model.get('shap_plots', []):
+        if source.get('name') == 'shap':
+            shap_path = source.get('path')
+            break
+
+    return file_path_account,file_path_card,file_path_client,file_path_disp,file_path_district ,file_path_loan,file_path_order,file_path_trans,visual_columns,countplot_columns,eda_path_seaborn,eda_path_sweetviz,feature_columns,columns_to_be_dropped,model_path,shap_path
