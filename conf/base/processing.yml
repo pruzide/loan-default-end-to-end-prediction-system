@@ -29,3 +29,11 @@ order_data:
 trans_data:
  - name: trans
    path: C:\loan_default_prediction system\data\01_raw\trans.csv
+
+X_train_data:
+ - name: X_train
+   path: C:\loan_default_prediction system\data\02_intermediate\X_train.csv
+
+X_test_data:
+ - name: X_test
+   path: C:\loan_default_prediction system\data\02_intermediate\X_test.csv

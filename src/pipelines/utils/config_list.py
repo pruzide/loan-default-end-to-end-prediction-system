@@ -22,6 +22,7 @@ def configure():
     file_path_loan = None
     file_path_order = None
     file_path_trans = None
+    file_path_X_train = None
 
     eda_path_seaborn = None
     eda_path_sweetviz = None
@@ -78,6 +79,18 @@ def configure():
             logging.info("trans.csv path succesfully obtained.")
             break
 
+    for source in processing.get('X_train_data', []):
+        if source.get('name') == 'X_train':
+            file_path_X_train = source.get('path')
+            logging.info("X_train path succesfully obtained.")
+            break
+
+    for source in processing.get('X_test_data', []):
+        if source.get('name') == 'X_test':
+            file_path_X_test = source.get('path')
+            logging.info("X_test path succesfully obtained.")
+            break
+
 
     visual_columns = eda_model.get('visual_columns',[])
     countplot_columns = eda_model.get('countplot_columns',[])
@@ -106,4 +119,4 @@ def configure():
             shap_path = source.get('path')
             break
 
-    return file_path_account,file_path_card,file_path_client,file_path_disp,file_path_district ,file_path_loan,file_path_order,file_path_trans,visual_columns,countplot_columns,eda_path_seaborn,eda_path_sweetviz,feature_columns,columns_to_be_dropped,model_path,shap_path
+    return file_path_account,file_path_card,file_path_client,file_path_disp,file_path_district ,file_path_loan,file_path_order,file_path_trans,file_path_X_train,file_path_X_test,visual_columns,countplot_columns,eda_path_seaborn,eda_path_sweetviz,feature_columns,columns_to_be_dropped,model_path,shap_path

@@ -45,12 +45,14 @@ def evaluate_model(true,predicted):
 
 
 
-def final_model(model_path,shap_plot_path,X_train,X_test,y_train,y_test):
+def final_model(model_path,shap_plot_path,X_train_path,X_test_path,X_train,X_test,y_train,y_test):
 
     scaler = StandardScaler()
 
     X_train_df = pd.DataFrame(X_train,columns=X_train.columns)
+    X_train_file = X_train_df.to_csv(X_train_path,index=False)
     X_test_df = pd.DataFrame(X_test,columns=X_test.columns)
+    X_test_file = X_train_df.to_csv(X_test_path,index=False)
 
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)

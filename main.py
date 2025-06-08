@@ -20,7 +20,7 @@ from src.pipelines.data_science.encoding import encode,target_encode
 from src.pipelines.data_science.modelling import drop_cols,fill_null,split,evaluate_model,final_model
 
 ## Getting all CSV file paths from configure file
-account_path,card_path,client_path,disp_path,district_path,loan_path,order_path,trans_path,visual_columns,countplot_columns,eda_path_seaborn,eda_path_sweetviz,feature_cols,cols_to_be_dropped,model_path,shap_plot_path = configure()
+account_path,card_path,client_path,disp_path,district_path,loan_path,order_path,trans_path,file_path_X_train,file_path_X_test,visual_columns,countplot_columns,eda_path_seaborn,eda_path_sweetviz,feature_cols,cols_to_be_dropped,model_path,shap_plot_path = configure()
 
 ## Loading data into our data folder by establishing SQL connection.
 load_data(account_path,card_path,client_path,disp_path,district_path,loan_path,order_path,trans_path)
@@ -55,7 +55,7 @@ X_train,X_test,y_train,y_test = split(df1,feature_cols)
 
 ## Model Training and Evaluation Metrics along with pickalizing the model and saving the SHAP plot
 
-final_model(model_path,shap_plot_path,X_train,X_test,y_train,y_test)
+final_model(model_path,shap_plot_path,file_path_X_train,file_path_X_test,X_train,X_test,y_train,y_test)
 
 
 
