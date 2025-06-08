@@ -14,6 +14,7 @@ from sklearn.svm import SVC
 
 model_path = "data/03_models/best_model.pkl"
 file_path_X_train = "data/02_intermediate/X_train.csv"
+shap_plot_path = "data/04_reporting/SVC_shap.png"
 
 # Load model and raw training data
 model: joblib = joblib.load(model_path)
