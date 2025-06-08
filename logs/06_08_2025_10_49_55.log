@@ -1,0 +1,24 @@
+[ 2025-06-08 10:49:56,047 ] 35 root - INFO - account.csv path succesfully obtained.
+[ 2025-06-08 10:49:56,047 ] 41 root - INFO - card.csv path succesfully obtained.
+[ 2025-06-08 10:49:56,047 ] 47 root - INFO - client.csv path succesfully obtained.
+[ 2025-06-08 10:49:56,047 ] 53 root - INFO - disp.csv path succesfully obtained.
+[ 2025-06-08 10:49:56,047 ] 59 root - INFO - district.csv path succesfully obtained.
+[ 2025-06-08 10:49:56,047 ] 65 root - INFO - loan.csv path succesfully obtained.
+[ 2025-06-08 10:49:56,047 ] 71 root - INFO - order.csv path succesfully obtained.
+[ 2025-06-08 10:49:56,047 ] 77 root - INFO - trans.csv path succesfully obtained.
+[ 2025-06-08 10:49:57,981 ] 23 root - INFO - Connection established with host
+[ 2025-06-08 10:51:26,849 ] 48 root - INFO - Data loaded successfully as csv files in data folder
+[ 2025-06-08 10:51:27,390 ] 14 root - INFO - All required data loaded succesfully
+[ 2025-06-08 10:51:27,482 ] 67 root - INFO - All feature engineering has been succesfully implemented.
+[ 2025-06-08 10:51:30,809 ] 223 matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[ 2025-06-08 10:51:30,817 ] 223 matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[ 2025-06-08 10:51:30,838 ] 223 matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[ 2025-06-08 10:51:30,841 ] 223 matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[ 2025-06-08 10:51:30,927 ] 26 root - INFO - Seaborn plots report generated.
+[ 2025-06-08 10:51:48,694 ] 34 root - INFO - Sweetviz report generated.
+[ 2025-06-08 10:51:48,694 ] 17 root - INFO - Step 1 of encoding is done.
+[ 2025-06-08 10:51:48,709 ] 31 root - INFO - Step 2 of encoding is done.
+[ 2025-06-08 10:51:48,710 ] 18 root - INFO - Non-useful columns have been dropped.
+[ 2025-06-08 10:51:48,710 ] 24 root - INFO - Null values have been handled.
+[ 2025-06-08 10:51:48,715 ] 32 root - INFO - train_test_split has been completed.
+[ 2025-06-08 10:51:48,809 ] 52 root - INFO - Best model has been saved as a pickle file.

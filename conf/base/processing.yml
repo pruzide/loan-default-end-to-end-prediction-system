@@ -1,0 +1,31 @@
+account_data:
+ - name: account
+   path: C:\loan_default_prediction system\data\01_raw\account.csv
+  
+card_data:
+ - name: card
+   path: C:\loan_default_prediction system\data\01_raw\card.csv
+
+client_data:
+ - name: client
+   path: C:\loan_default_prediction system\data\01_raw\client.csv
+
+disp_data:
+ - name: disp
+   path: C:\loan_default_prediction system\data\01_raw\disp.csv
+
+district_data:
+ - name: district
+   path: C:\loan_default_prediction system\data\01_raw\district.csv
+
+loan_data:
+ - name: loan
+   path: C:\loan_default_prediction system\data\01_raw\loan.csv
+
+order_data:
+ - name: order
+   path: C:\loan_default_prediction system\data\01_raw\order.csv
+
+trans_data:
+ - name: trans
+   path: C:\loan_default_prediction system\data\01_raw\trans.csv

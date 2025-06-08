@@ -1,0 +1,12 @@
+[ 2025-06-04 20:18:41,990 ] 33 root - INFO - account.csv path succesfully obtained.
+[ 2025-06-04 20:18:41,990 ] 39 root - INFO - card.csv path succesfully obtained.
+[ 2025-06-04 20:18:41,990 ] 45 root - INFO - client.csv path succesfully obtained.
+[ 2025-06-04 20:18:41,990 ] 51 root - INFO - disp.csv path succesfully obtained.
+[ 2025-06-04 20:18:41,990 ] 57 root - INFO - district.csv path succesfully obtained.
+[ 2025-06-04 20:18:41,990 ] 63 root - INFO - loan.csv path succesfully obtained.
+[ 2025-06-04 20:18:41,990 ] 69 root - INFO - order.csv path succesfully obtained.
+[ 2025-06-04 20:18:41,990 ] 75 root - INFO - trans.csv path succesfully obtained.
+[ 2025-06-04 20:18:43,220 ] 23 root - INFO - Connection established with host
+[ 2025-06-04 20:19:24,559 ] 48 root - INFO - Data loaded successfully as csv files in data folder
+[ 2025-06-04 20:19:25,020 ] 14 root - INFO - All required data loaded succesfully
+[ 2025-06-04 20:19:25,037 ] 67 root - INFO - All feature engineering has been succesfully implemented.

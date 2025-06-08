@@ -1,0 +1,10 @@
+[ 2025-06-02 16:17:36,906 ] 21 root - INFO - Connection established with host
+[ 2025-06-02 16:17:38,245 ] 38 root - INFO - Fetching each table
+[ 2025-06-02 16:17:38,695 ] 38 root - INFO - Fetching each table
+[ 2025-06-02 16:17:39,658 ] 38 root - INFO - Fetching each table
+[ 2025-06-02 16:17:40,457 ] 38 root - INFO - Fetching each table
+[ 2025-06-02 16:17:41,034 ] 38 root - INFO - Fetching each table
+[ 2025-06-02 16:17:41,547 ] 38 root - INFO - Fetching each table
+[ 2025-06-02 16:17:42,294 ] 38 root - INFO - Fetching each table
+[ 2025-06-02 16:18:12,694 ] 38 root - INFO - Fetching each table
+[ 2025-06-02 16:18:12,724 ] 42 root - INFO - Data loaded successfully as csv files in data folder

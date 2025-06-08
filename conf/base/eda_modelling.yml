@@ -1,0 +1,77 @@
+seaborn_plots:
+  - name: seaborn
+    path: C:\loan_default_prediction system\data\04_reporting\loan_plots.pdf
+
+sweetviz_html_visualization:
+  - name: sweetviz
+    path: C:\loan_default_prediction system\data\04_reporting\loan_sweetviz.html
+
+best_model:
+ - name: best_model
+   path: C:\loan_default_prediction system\data\03_models\best_model.pkl
+
+visual_columns:
+ - 'amount'
+ - 'duration'
+ - 'payments'
+ - 'A4'
+ - 'A10'
+ - 'A11'
+ - 'A12'
+ - 'A13'
+ - 'A14'
+ - 'person_age'
+ - 'account_age_days'
+ - 'account_age_years'
+ - 'monthly_burden_ratio'
+ - 'loan_amount_to_income_ratio'
+ - 'frequency'
+ - 'A3'
+ - 'district_mismatch'
+
+countplot_columns:
+ - 'frequency'
+ - 'A3'
+ - 'district_mismatch'
+
+feature_cols:
+ - 'amount'
+ - 'duration'
+ - 'payments'
+ - 'frequency_encoded'
+ - 'district_mismatch'
+ - 'A4'
+ - 'A5'
+ - 'A6'
+ - 'A7'
+ - 'A8'
+ - 'A9'
+ - 'A10'
+ - 'A11'
+ - 'A12'
+ - 'A13'
+ - 'A14'
+ - 'A15'
+ - 'A16'
+ - 'person_age'
+ - 'account_age_years'
+ - 'monthly_burden_ratio'
+ - 'loan_amount_to_income_ratio'
+
+cols_to_be_dropped:
+- 'loan_id'
+- 'account_id'
+- 'client_id'
+- 'district_id'
+- 'district_id_client'
+- 'district_id_account'
+- 'loan_date'
+- 'account_open_date'
+- 'birth_date'
+- 'A2'
+- 'A3'
+- 'loan_date'
+- 'account_open_date'
+- 'gender'
+- 'frequency'
+- 'account_age_days'
