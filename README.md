@@ -37,8 +37,11 @@ Access the deployed app here:
 ## 🛠 Setup
 
 Clone and install
+
 git clone https://github.com/pruzide/loan-default-end-to-end-prediction-system.git
+
 cd loan-default-end-to-end-prediction-system
+
 pip install -r requirements.txt
 
 ---
