@@ -72,3 +72,39 @@
 | Max latency seconds | 0.1431 |
 | p95 < 2 seconds | PASS |
 
+
+## Load Test Run - 2026-07-03T22:45:18.006862Z
+
+| Metric | Value |
+|---|---:|
+| URL | `http://13.53.125.154:8000/predict` |
+| Concurrency | 15 |
+| Total requests | 150 |
+| Successful requests | 150 |
+| Failed requests | 0 |
+| Total time seconds | 3.7133 |
+| Throughput requests/sec | 40.3949 |
+| Average latency seconds | 0.365 |
+| p50 latency seconds | 0.3625 |
+| p95 latency seconds | 0.4031 |
+| Max latency seconds | 0.4105 |
+| p95 < 2 seconds | PASS |
+
+
+## Load Test Run - 2026-07-03T22:45:22.164835Z
+
+| Metric | Value |
+|---|---:|
+| URL | `http://13.53.125.154:8000/predict` |
+| Concurrency | 25 |
+| Total requests | 250 |
+| Successful requests | 250 |
+| Failed requests | 0 |
+| Total time seconds | 3.79 |
+| Throughput requests/sec | 65.9634 |
+| Average latency seconds | 0.3693 |
+| p50 latency seconds | 0.3636 |
+| p95 latency seconds | 0.4252 |
+| Max latency seconds | 0.4421 |
+| p95 < 2 seconds | PASS |
+
