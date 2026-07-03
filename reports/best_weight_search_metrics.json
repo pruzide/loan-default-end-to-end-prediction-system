@@ -1,0 +1,27 @@
+{
+  "model_name": "logreg_w3_c5",
+  "threshold": 0.68,
+  "metrics": {
+    "accuracy": 0.9463,
+    "precision_default": 0.875,
+    "recall_default": 0.6087,
+    "f1_default": 0.7179,
+    "macro_precision": 0.9137,
+    "macro_recall": 0.7989,
+    "macro_f1": 0.8441,
+    "weighted_precision": 0.9437,
+    "weighted_recall": 0.9463,
+    "weighted_f1": 0.942
+  },
+  "confusion_matrix": [
+    [
+      180,
+      2
+    ],
+    [
+      9,
+      14
+    ]
+  ],
+  "default_precision_recall_in_68_75": false
+}

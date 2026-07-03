@@ -1,0 +1,28 @@
+{
+  "model_name": "logistic_regression_balanced",
+  "threshold": 0.82,
+  "metrics": {
+    "accuracy": 0.9366,
+    "precision_default": 0.7778,
+    "recall_default": 0.6087,
+    "f1_default": 0.6829,
+    "macro_precision": 0.8648,
+    "macro_recall": 0.7934,
+    "macro_f1": 0.8238,
+    "weighted_precision": 0.9323,
+    "weighted_recall": 0.9366,
+    "weighted_f1": 0.9331
+  },
+  "confusion_matrix": [
+    [
+      178,
+      4
+    ],
+    [
+      9,
+      14
+    ]
+  ],
+  "default_precision_recall_in_resume_range": false,
+  "old_resume_exact_match": false
+}
