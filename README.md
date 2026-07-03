@@ -1,27 +1,18 @@
-# 🏦 Loan Default Prediction System with SHAP Explainability
+# Loan Default Prediction System with SHAP Explainability
 
-This end-to-end machine learning project predicts whether a customer will default on a loan using the Czech financial dataset. It includes model training, explainability with SHAP, and a deployed UI on Streamlit.
-
-I suggest you to go through the Jupyter Notebook to go through the detailed process of selection of model and experimenting with various features and finalizing SVC as the best model. The notebook also has detailed EDA to capture various potential trends which increase credit risk.
-
----
+End-to-end credit underwriting project: predicts loan default risk from customer, loan, district, and banking data (Czech financial dataset). Includes a training pipeline, SHAP explainability, a Streamlit dashboard, a FastAPI inference service, Docker containerization, AWS EC2 deployment, and load-testing evidence.
 
 ## Live Demo
+- **AWS EC2 (primary):** http://13.53.125.154:8501
+- **Streamlit Cloud (fallback):** https://loan-default-end-to-end-prediction-system-g6wlk74appi6gwvxjzee.streamlit.app/
 
-Primary deployment:
+> EC2 IP may change if the instance is stopped/restarted without an Elastic IP.
 
-- AWS EC2: http://13.53.125.154:8501
+## What It Does
+Binary classification (`0` = No Default, `1` = Default) using SVC on 5 engineered features: `amount`, `payments`, `A4`, `A15`, `A16`. Predictions are explained with SHAP (waterfall + beeswarm), served via a Streamlit dashboard for humans and a FastAPI endpoint for programmatic scoring.
 
-Fallback/staging:
-
-- Streamlit Community Cloud: https://loan-default-end-to-end-prediction-system-g6wlk74appi6gwvxjzee.streamlit.app/
-
----
-
-
-## Metrics
-
-The deployed baseline SVC model is evaluated using a stratified 70/30 train-test split with `random_state=42`.
+## Model Metrics
+Stratified 70/30 split, `random_state=42`:
 
 | Metric | Value |
 |---|---:|
@@ -29,105 +20,49 @@ The deployed baseline SVC model is evaluated using a stratified 70/30 train-test
 | Default-class precision | 21.74% |
 | Default-class recall | 65.22% |
 
-Full report:
+Full report: [`reports/model_metrics.json`](reports/model_metrics.json). Reproduce with `python src/pipelines/evaluate.py`.
 
-- [`reports/model_metrics.json`](reports/model_metrics.json)
+A leakage-safe transaction-feature model was also tested (94.6% accuracy, 87.5% precision, 60.9% recall) but is **not** wired into the deployed dashboard — see `reports/` for details. The deployed model should be treated as a prototype, not a production-grade decisioning system, given its low default-class precision.
 
-
-
-## Docker
-
-Build the Streamlit image:
-
+## Run Locally
 ```bash
-docker build -t loan-default-app .
-
-Additional leakage-safe tuning experiments using pre-loan transaction features are available in the reports folder. These experiments showed that the original resume metric range is not supported by the current dataset/model setup without changing the modelling definition.
-
-
-```markdown
-## Inference API
-
-Health check:
-
-```bash
-curl http://localhost:8000/health
-
-
-```markdown
-## AWS EC2 Deployment
-
-The Dockerized Streamlit dashboard and FastAPI inference service can be deployed on Ubuntu EC2 using:
-
-- [`deploy/AWS_EC2.md`](deploy/AWS_EC2.md)
-
-
-## Load Testing
-
-Load testing is performed against the FastAPI inference endpoint using concurrent requests.
-
-Report:
-
-- [`reports/load_test_results.md`](reports/load_test_results.md)
-
-The EC2 load test validates single-customer scoring at 15–25 concurrent users. The latency claim should be read from the latest p95 result in the report.
-
-
-
-## ⚙️ Features
-
-- 📊 **Data Cleaning** and feature engineering from relational financial tables
-- 🧠 **SVC Classifier** with scaling and class balancing
-- 📈 **SHAP Explainability** (KernelExplainer with Waterfall + Beeswarm plots)
-- 🧪 **Evaluation Reports** with precision/recall/F1-score
-- 🌐 **Streamlit-based UI** + SHAP visualization support
-- 🔁 **Fully modular pipeline** with reusability
-
----
-
-## 📦 Technologies Used
-
-- Python (3.10)
-- scikit-learn
-- SHAP
-- Pandas, NumPy, Matplotlib
-- Streamlit
-- Joblib
-
----
-
-## 🛠 Setup
-
-Clone and install
-
 git clone https://github.com/pruzide/loan-default-end-to-end-prediction-system.git
-
 cd loan-default-end-to-end-prediction-system
-
 pip install -r requirements.txt
 
----
+streamlit run app.py                                    # dashboard → localhost:8501
+uvicorn src.inference.api:app --host 0.0.0.0 --port 8000 # API → localhost:8000
+```
 
+## Docker
+```bash
+docker compose up --build
+```
+Runs `webapp` (Streamlit, :8501) and `inference-api` (FastAPI, :8000) as separate services sharing the same model artifact.
 
-# Run app
-streamlit run app.py
+## AWS EC2 Deployment
+Deployed on Ubuntu 22.04 + Docker Compose on EC2. Full steps: [`deploy/AWS_EC2.md`](deploy/AWS_EC2.md).
 
----
+## Load Testing
+25 concurrent users against the FastAPI `/predict` endpoint on EC2:
 
+| Metric | Value |
+|---|---:|
+| Requests | 250 (0 failed) |
+| Throughput | 65.83 req/s |
+| p50 latency | 0.36 sec |
+| p95 latency | 0.43 sec |
+| p95 < 2s target | PASS |
 
-## 🧠 SHAP Outputs
-📄 Waterfall plots for individual prediction explanation
+Full report: [`reports/load_test_results.md`](reports/load_test_results.md). Re-run with `python tests/load_test.py --url <url>/predict --concurrency 25 --requests 250`.
 
-📊 Beeswarm plots for global feature impact
+## Tech Stack
+Python 3.10 · pandas · scikit-learn · SHAP · Streamlit · FastAPI · Docker / Docker Compose · AWS EC2
 
-ℹ️ Background dataset used from training set (**scaled + unscaled input**)
+## Limitations
+- Deployed dashboard uses the baseline 5-feature model, not the higher-accuracy transaction-feature model.
+- Low default-class precision — prototype-grade, not production-grade.
+- No auth, request logging, or drift monitoring yet.
 
----
-
-## 📄 License
-This project is under the MIT License.
-
-
-
-
-
+## License
+MIT
