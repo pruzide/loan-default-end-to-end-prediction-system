@@ -2,7 +2,7 @@ import argparse
 import statistics
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import requests
@@ -79,7 +79,7 @@ def run_load_test(url, concurrency, requests_count, timeout):
 
     summary = {
         "url": url,
-        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "timestamp": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         "concurrency": concurrency,
         "total_requests": requests_count,
         "successful_requests": len(successful),
