@@ -8,6 +8,16 @@ End-to-end credit underwriting project: predicts loan default risk from customer
 
 > EC2 IP may change if the instance is stopped/restarted without an Elastic IP.
 
+## Dashboard Preview
+
+### Risk Assessment View
+
+![Loan Default Risk Assessment Dashboard](docs/screenshots/dashboard.png)
+
+### SHAP Explanation View
+
+![SHAP Explanation Dashboard](docs/screenshots/dashboard-2.png)
+
 ## What It Does
 Binary classification (`0` = No Default, `1` = Default) using SVC on 5 engineered features: `amount`, `payments`, `A4`, `A15`, `A16`. Predictions are explained with SHAP (waterfall + beeswarm), served via a Streamlit dashboard for humans and a FastAPI endpoint for programmatic scoring.
 
